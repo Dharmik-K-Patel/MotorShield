@@ -1,0 +1,40 @@
+.video-player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-player iframe {
+    width: 90%;
+    max-width: 900px;
+    width: 800px;
+    height: 450px;
+    border: 4px solid #fff;
+}
+
+.video-player.hide {
+    display: none;
+}
+
+
+/* ------Media Queries------- */
+@media (max-width: 850px) {
+    .video-player iframe {
+        width: 600px;
+        height: 338px;
+    }
+}
+
+@media (max-width: 650px) {
+    .video-player iframe {
+        width: 400px;
+        height: 225px;
+    }
+}

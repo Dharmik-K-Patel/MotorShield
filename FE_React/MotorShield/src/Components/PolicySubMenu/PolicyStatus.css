@@ -1,0 +1,34 @@
+.policy-status-page {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 50px 50px;
+  background-color: rgba(0, 23, 42, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: large;
+}
+
+.policy-status-page h2 {
+    margin-bottom: 30px;
+    color: #ffff;
+}
+
+.policy-details {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.policy-details div {
+    margin-bottom: 5px;
+}
+
+.policy_status {
+    font-weight: bold;
+}
+
+.total_premium {
+    color: #cccc;
+    font-weight: bold;
+}

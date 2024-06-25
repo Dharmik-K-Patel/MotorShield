@@ -1,0 +1,36 @@
+.input-page {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 30px 40px;
+  background-color: rgba(0, 23, 42, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-form {
+  text-align: center;
+}
+
+.input-form h2 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.input-form input{
+  width: 100%;
+  padding: 10px;
+  background: #EBECFE;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+
+.disp-error {
+  color: #f40400;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}

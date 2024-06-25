@@ -1,0 +1,97 @@
+.add-ons-page {
+  max-width: 1500px;
+  margin-top: 60px;
+  padding: 20px 20px;
+  background-color: rgba(0, 23, 42, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+
+
+.add-ons-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: x-large;
+}
+
+.add-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.add-card {
+  text-align: center;
+  background-color: rgba(0, 23, 42, 0.7);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.add-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.9);
+    opacity: 1;
+}
+
+.addon hr {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.add-on-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.vehicle-error {
+  margin-top: 7px;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ------------Media Queries----------- */
+@media (max-width: 700px) {
+  .add-ons-page {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+  }
+
+  .add-ons-title {
+    font-size: large;
+    margin-bottom: 5px;
+  }
+
+  .add-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-card {
+    width: 100%;
+    margin: 5px 0;
+    padding: 15px;
+  }
+
+  .addon hr {
+    margin-top: 5px;
+    margin-bottom: 3px;
+  }
+
+  .add-on-btn-container {
+    margin-top: 10px;
+  }
+
+  .vehicle-error {
+    font-size: 14px;
+  }
+}

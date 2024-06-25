@@ -1,0 +1,47 @@
+.new-form {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 20px 20px;
+    background-color: rgba(0, 23, 42, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.vehicle-form {
+    text-align: center;
+}
+
+.vehicle-form h2 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #ffff;
+}
+
+.vehicle-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffff;
+}
+
+.vehicle-form input[type="text"],
+.vehicle-form input[type="number"],
+.vehicle-form select,
+.vehicle-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    background: #EBECFE;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+
+.add-error {
+  margin-top: 7px;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}

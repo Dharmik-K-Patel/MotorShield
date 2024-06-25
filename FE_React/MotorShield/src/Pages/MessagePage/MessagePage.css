@@ -1,0 +1,13 @@
+.filed-page{
+  margin-top: 80px;
+  padding: 60px 40px;
+  background-color: rgba(0, 23, 42, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: large;
+}
+
+.filed-page h2 {
+  text-align: center;
+}

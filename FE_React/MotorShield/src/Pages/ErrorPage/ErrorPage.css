@@ -1,0 +1,25 @@
+.error-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.error-heading {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.error-details {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.error-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.error-container a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

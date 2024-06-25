@@ -1,0 +1,80 @@
+.conta {
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 40px 20px;
+    background-color: rgba(0, 23, 42, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.img-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.signin-image {
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-radius: 10px;
+}
+
+.form-container {
+    flex: 1;
+}
+
+.signin-form {
+    text-align: center;
+}
+  
+.signin-form h2 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #ffff;
+}
+
+.signin-form input {
+    width: 100%;
+    padding: 10px;
+    background: #EBECFE;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.error-message {
+    color: #ff3333;
+    margin-bottom: 20px;
+}
+
+.signup-link, .forgot-password-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffff;
+}
+  
+.signup-link a, .forgot-password-link a {
+    color: #cccc;
+    text-decoration: none;
+}
+  
+.signup-link a:hover, .forgot-password-link a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* -------Media Queries--------- */
+@media (max-width: 700px) {
+    .img-container {
+        display: none;
+    }
+    .conta {
+        max-width: 360px;
+    }
+}
