@@ -141,9 +141,12 @@ class RetrieveVehicleSerializer(serializers.ModelSerializer):
 
 class PolicySerializer(serializers.ModelSerializer):
     vehicle_number = serializers.CharField(write_only=True)
-    personal_accident = serializers.BooleanField(write_only=True)
-    passenger_cover = serializers.BooleanField(write_only=True)
-    breakdown_assistance = serializers.BooleanField(write_only=True)
+    personal_accident = serializers.BooleanField(write_only=True, required=False)
+    passenger_cover = serializers.BooleanField(write_only=True, required=False)
+    breakdown_assistance = serializers.BooleanField(write_only=True, required=False)
+    personal_accident_premium = serializers.FloatField(write_only=True, required=False)
+    passenger_cover_premium = serializers.FloatField(write_only=True, required=False)
+    breakdown_assistance_premium = serializers.FloatField(write_only=True, required=False)
     vehicle = serializers.CharField(source='vehicle.vehicle_number', read_only=True)
 
     class Meta:
@@ -165,26 +168,30 @@ class PolicySerializer(serializers.ModelSerializer):
         except Policy.DoesNotExist:
             pass
         else:
-            if policy.policy_status == "Rejected" or policy.policy_status == "Expired":
+            if policy.policy_status in ["Rejected", "Expired"]:
                 policy.delete()
             else:
                 raise serializers.ValidationError(f"Vehicle already has an Applied Proposal with Policy Status - {policy.policy_status}")
+        
         validated_data['policy_number'] = "MSPOL"+str(vehicle.id)
         age_of_vehicle = date.today().year - vehicle.registration_date.year
         validated_data['base_premium'] = calculate_base_premium(vehicle.vehicle_type, age_of_vehicle)
+        
+        # Adding premiums based on the fields
         total = validated_data['base_premium']
-        if validated_data.pop('personal_accident'):
-            validated_data['personal_accident_premium'] = 11*12
-            total += validated_data['personal_accident_premium']
-        if validated_data.pop('passenger_cover'):
-            validated_data['passenger_cover_premium'] = 21*12
-            total += validated_data['passenger_cover_premium']
-        if validated_data.pop('breakdown_assistance'):
-            validated_data['breakdown_assistance_premium'] = 3*12
-            total += validated_data['breakdown_assistance_premium']
+        personal_accident_premium = validated_data.get('personal_accident_premium', 0)
+        passenger_cover_premium = validated_data.get('passenger_cover_premium', 0)
+        breakdown_assistance_premium = validated_data.get('breakdown_assistance_premium', 0)
+        
+        total += personal_accident_premium + passenger_cover_premium + breakdown_assistance_premium
+        
+        validated_data['personal_accident_premium'] = personal_accident_premium
+        validated_data['passenger_cover_premium'] = passenger_cover_premium
+        validated_data['breakdown_assistance_premium'] = breakdown_assistance_premium
         validated_data['total_premium'] = total
         validated_data['insured_declared_value'] = calculate_idv(age_of_vehicle, vehicle.purchase_price)
         validated_data['policy_status'] = 'Pending For Approval'
+        
         return Policy.objects.create(**validated_data)
     
     def update(self, instance, validated_data):
