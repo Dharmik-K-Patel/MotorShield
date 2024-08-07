@@ -1,5 +1,4 @@
 from django.urls import path, include
-
 from MotorInsuranceCompany.API.views import *
 
 urlpatterns = [
@@ -10,8 +9,7 @@ urlpatterns = [
     path('send-reset-password-email/', SendPasswordResetEmailView.as_view(), name='send-reset-password-email'),
     path('reset-password/<uid>/<token>/', UserPasswordResetView.as_view(), name='reset-password'),
     path('add-vehicle/', VehicleCreateView.as_view(), name='add-vehicle'),
-    path('vehicles/<str:vn>/', VehicleDetailView.as_view(), name='vehicle-detail'),
-    # path('add-owner/', OwnerCreateView.as_view(), name='add-owner'),
+    path('vehicles/<str:vehicle_number>/', VehicleDetailView.as_view(), name='vehicle-detail'),  # Adjusted URL parameter
     path('add-policy/', PolicyCreateView.as_view(), name='add-policy'),
     path('policies/<str:vehicle_number>/', PolicyDetailView.as_view(), name='policy-detail'),
     path('policies/<int:pk>/update/', PolicyUpdateView.as_view(), name='policy-update'),
